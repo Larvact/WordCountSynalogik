@@ -14,7 +14,7 @@ public class EndingWordPunctuationTransformer implements WordTransformer{
         Matcher matcher = endOfWordPattern.matcher(string);
         String punctuationRemoved = string;
         while (matcher.find()){
-            punctuationRemoved = punctuationRemoved.substring(0,punctuationRemoved.length() - 2);
+            punctuationRemoved = punctuationRemoved.substring(0,punctuationRemoved.length() - 1);
             matcher = endOfWordPattern.matcher(punctuationRemoved);
         }
         return punctuationRemoved;
