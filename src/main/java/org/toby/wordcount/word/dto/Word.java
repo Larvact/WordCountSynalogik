@@ -16,11 +16,11 @@ public class Word {
     }
 
     private void setWord(){
-        String validatedWord = this.delimitedString;
+        String transformedWord = this.delimitedString;
         for(WordTransformer wordTransformer : this.wordTransformers){
-            validatedWord = wordTransformer.validate(validatedWord);
+            transformedWord = wordTransformer.validate(transformedWord);
         }
-        this.word = validatedWord;
+        this.word = transformedWord;
     }
 
     public String getWord(){
