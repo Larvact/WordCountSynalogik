@@ -13,10 +13,12 @@ import java.util.List;
 public class WordReaderTester {
 
     private static Path singleSentenceWordCountTestFilePath;
+    private static Path bibleDailyWordCountTestFilePath;
 
     @BeforeAll
     private static void setupFilePaths(){
         singleSentenceWordCountTestFilePath = Paths.get(TestFileLocations.SINGLE_SENTENCE_FILE_PATH.getFilePath());
+        bibleDailyWordCountTestFilePath = Paths.get(TestFileLocations.BIBLE_DAILY.getFilePath());
     }
 
     @Test
@@ -24,6 +26,14 @@ public class WordReaderTester {
         WordReader reader = new WordReader(singleSentenceWordCountTestFilePath);
         List<Word> wordList = reader.read();
         Assertions.assertEquals(9, wordList.size());
+    }
+
+    @Test
+    void ensureCorrectNumberOfWordsAreReadFromBibleDailyFile(){
+        WordReader reader = new WordReader(bibleDailyWordCountTestFilePath);
+        List<Word> wordList = reader.read();
+        int currentExpectedCount = 793094; //Need to verify assumptions and make changes where necessary to get a fully accurate word expected count
+        Assertions.assertEquals(currentExpectedCount, wordList.size());
     }
 
 }
