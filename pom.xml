@@ -6,11 +6,9 @@
 
   <groupId>org.toby</groupId>
   <artifactId>WordCountSynalogik</artifactId>
+  <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-
   <name>WordCountSynalogik</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -43,7 +41,6 @@
       <version>2.14.1</version>
     </dependency>
   </dependencies>
-
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
@@ -89,6 +86,22 @@
       </plugins>
     </pluginManagement>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <finalName>WordCount</finalName>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>

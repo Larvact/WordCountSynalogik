@@ -6,6 +6,6 @@ public class ApplicationEntry
 {
     public static void main( String[] args )
     {
-        new WordCount("src/test/resources/blankFile.txt");
+        new WordCount(args[0]);
     }
 }
