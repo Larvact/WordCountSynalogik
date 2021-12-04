@@ -46,18 +46,18 @@ public class WordSizeFrequency {
 
     private void setMostFrequentWordLengths() {
         this.mostFrequentWordLengths = new ArrayList<>();
-        int currentMaximumLengthFrequency = 0;
-        for (int wordLength : this.wordSizeFrequencyMap.keySet()) {
-            int wordLengthFrequency = this.wordSizeFrequencyMap.get(wordLength);
-            if (wordLengthFrequency > currentMaximumLengthFrequency) {
+        int maximumLengthFrequency = 0;
+        for(Map.Entry<Integer, Integer> wordLengthFrequencyPair: this.wordSizeFrequencyMap.entrySet()){
+            int currentWordLength = wordLengthFrequencyPair.getKey();
+            int currentWordLengthFrequency = wordLengthFrequencyPair.getValue();
+            if (currentWordLengthFrequency > maximumLengthFrequency) {
                 this.mostFrequentWordLengths.clear();
-                this.mostFrequentWordLengths.add(wordLength);
-                currentMaximumLengthFrequency = wordLengthFrequency;
-            } else if (wordLengthFrequency == currentMaximumLengthFrequency) {
-                this.mostFrequentWordLengths.add(wordLength);
+                this.mostFrequentWordLengths.add(currentWordLength);
+                maximumLengthFrequency = currentWordLengthFrequency;
+            } else if (currentWordLengthFrequency == maximumLengthFrequency) {
+                this.mostFrequentWordLengths.add(currentWordLength);
             }
         }
-        Collections.sort(this.mostFrequentWordLengths);
     }
 
     private void setMaximumWordFrequency(){
