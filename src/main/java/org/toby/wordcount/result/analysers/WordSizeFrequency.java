@@ -60,12 +60,7 @@ public class WordSizeFrequency {
         Collections.sort(this.mostFrequentWordLengths);
     }
 
-    public void setMaximumWordFrequency(){
-        this.maximumWordFrequency = 0;
-        for(int frequency : this.wordSizeFrequencyMap.values()){
-            if(frequency > this.maximumWordFrequency){
-                this.maximumWordFrequency = frequency;
-            }
-        }
+    private void setMaximumWordFrequency(){
+        this.maximumWordFrequency = this.wordSizeFrequencyMap.get(this.mostFrequentWordLengths.get(0));
     }
 }

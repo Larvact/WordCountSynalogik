@@ -30,7 +30,8 @@ public class Result {
     }
 
     private void addFileNameToResultBuild(StringBuilder builder){
-        builder.append("---------------------------------")
+        builder.append("\n")
+                .append("---------------------------------")
                 .append(this.fileName)
                 .append("---------------------------------")
                 .append("\n")
@@ -62,20 +63,26 @@ public class Result {
     private void addMostFrequentOccurringLengthToResultBuild(StringBuilder builder){
         List<Integer> mostFrequentWordLengths = this.wordsCalculator.getMostFrequentWordLengths();
         builder.append("The most frequently occurring word length is ")
-                .append(this.wordsCalculator.getMaximumWordFrequency())
-                .append(", for word lengths of ");
-        for(int wordLengthIndex = 0; wordLengthIndex < mostFrequentWordLengths.size() - 1; wordLengthIndex++){
-            builder.append(mostFrequentWordLengths.get(wordLengthIndex))
-                    .append(" ");
+                .append(this.wordsCalculator.getMaximumWordFrequency());
+        if(mostFrequentWordLengths.size() == 1){
+            builder.append(", for word length of ")
+                    .append(mostFrequentWordLengths.get(0));
         }
-        builder.append("& ")
-                .append(mostFrequentWordLengths.get(mostFrequentWordLengths.size() - 1));
+        else {
+            builder.append(", for word lengths of ");
+            for (int wordLengthIndex = 0; wordLengthIndex < mostFrequentWordLengths.size() - 1; wordLengthIndex++) {
+                builder.append(mostFrequentWordLengths.get(wordLengthIndex))
+                        .append(" ");
+            }
+            builder.append("& ")
+                    .append(mostFrequentWordLengths.get(mostFrequentWordLengths.size() - 1));
+        }
     }
 
     private void addFooterToResultBuild(StringBuilder builder){
         builder.append("\n")
                 .append("\n")
-                .append("---------------------------------");
+                .append("---------------------------------------------------------------------------------------------------");
     }
 
     public String getResult() {

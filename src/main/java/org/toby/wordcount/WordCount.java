@@ -17,11 +17,9 @@ import java.util.List;
 public class WordCount {
 
     private Path filePath;
-    private WordReader reader;
     private List<Word> readWords;
     private WordsCalculator wordsCalculator;
     private Result result;
-    private Writer consoleWriter;
 
     public WordCount(String filePath) {
         constructWords(filePath);
@@ -32,8 +30,8 @@ public class WordCount {
 
     private void constructWords(String filePath){
         this.filePath = Paths.get(filePath);
-        this.reader = new WordReader(this.filePath);
-        this.readWords = this.reader.read();
+        WordReader reader = new WordReader(this.filePath);
+        this.readWords = reader.read();
     }
 
     private void constructCalculator(){
@@ -48,7 +46,7 @@ public class WordCount {
     }
 
     private void printResultToConsole(){
-        this.consoleWriter = new ConsoleWriter();
-        this.consoleWriter.write(this.result.getResult());
+        Writer consoleWriter = new ConsoleWriter();
+        consoleWriter.write(this.result.getResult());
     }
 }
