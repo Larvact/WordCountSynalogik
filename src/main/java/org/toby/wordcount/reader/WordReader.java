@@ -45,10 +45,18 @@ public class WordReader {
             throw new IllegalArgumentException(MessageFormat.format("The File on Path {0} Does Not Exist on Your System. Please Check and Re-input a Valid File Path to the Program and Try Again.", this.path));
         }
         wordsInFile = filterOutNonWords(wordsInFile);
+        checkReadWordsIsNonEmpty(wordsInFile);
         return wordsInFile;
     }
 
     private List<Word> filterOutNonWords(List<Word> words){
         return words.stream().filter(word -> word.getWordStringLength() > 0).collect(Collectors.toList());
+    }
+
+    private void checkReadWordsIsNonEmpty(List<Word> words){
+        if(words.isEmpty()){
+            LOG.error(MessageFormat.format("The File on Path {0} Does Not Have any Words. Please Check and Re-input a File Path to a File With Words to the Program and Try Again.", this.path));
+            throw new IllegalArgumentException(MessageFormat.format("The File on Path {0} Does Not Have any Words. Please Check and Re-input a File Path to a File With Words to the Program and Try Again.", this.path));
+        }
     }
 }
