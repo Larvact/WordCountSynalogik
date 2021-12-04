@@ -5,9 +5,9 @@ import java.util.List;
 
 public class WordsCalculator {
 
-    private WordCounter wordCounter;
-    private WordSizeAverager wordAverager;
-    private WordSizeFrequency wordSizeFrequency;
+    private final WordCounter wordCounter;
+    private final WordSizeAverager wordAverager;
+    private final WordSizeFrequency wordSizeFrequency;
 
     public WordsCalculator(WordCounter wordCounter, WordSizeAverager wordAverager, WordSizeFrequency wordSizeFrequency) {
         this.wordCounter = wordCounter;

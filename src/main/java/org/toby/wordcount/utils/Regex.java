@@ -7,13 +7,13 @@ public enum Regex {
     PUNCTUATION_END_OF_WORD("[!\"#$'()*+,-.\\/:;<=>?@\\[\\]^_`{|}~]$"),
     PUNCTUATION_START_OF_WORD("^[!\"#'()*+,-.\\/:;<=>?@\\[\\]^_`{|}~]");
 
-    private String regex;
+    private final String regexString;
 
-    Regex(String regex) {
-        this.regex = regex;
+    Regex(String regexString) {
+        this.regexString = regexString;
     }
 
-    public String getRegex() {
-        return regex;
+    public String getRegexString() {
+        return regexString;
     }
 }

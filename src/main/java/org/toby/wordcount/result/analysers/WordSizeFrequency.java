@@ -33,7 +33,7 @@ public class WordSizeFrequency {
     private void setWordSizeFrequencyMap() {
         this.wordSizeFrequencyMap = new HashMap<>();
         for (Word word : this.words) {
-            int currentWordLength = word.getWordLength();
+            int currentWordLength = word.getWordStringLength();
             if (this.wordSizeFrequencyMap.containsKey(currentWordLength)) {
                 int previousFrequency = this.wordSizeFrequencyMap.get(currentWordLength);
                 int newFrequency = previousFrequency + 1;

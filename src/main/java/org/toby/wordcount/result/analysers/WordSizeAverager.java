@@ -9,7 +9,7 @@ import java.util.List;
 public class WordSizeAverager {
 
     private final List<Word> words;
-    private WordCounter wordCounter;
+    private final WordCounter wordCounter;
 
     public WordSizeAverager(List<Word> words, WordCounter wordCounter) {
         this.words = words;
@@ -19,7 +19,7 @@ public class WordSizeAverager {
     public double getWordSizeAverage(){
         long sumOfLettersOrNumbers = 0;
         for(Word word : this.words){
-            sumOfLettersOrNumbers = sumOfLettersOrNumbers + word.getWordLength();
+            sumOfLettersOrNumbers = sumOfLettersOrNumbers + word.getWordStringLength();
         }
         BigDecimal averageWordSize = BigDecimal.valueOf(sumOfLettersOrNumbers/ (double) wordCounter.getWordCount()).setScale(3, RoundingMode.HALF_UP);
         return averageWordSize.doubleValue();

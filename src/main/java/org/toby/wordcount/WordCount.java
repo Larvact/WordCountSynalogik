@@ -47,6 +47,6 @@ public class WordCount {
 
     private void printResultToConsole(){
         Writer consoleWriter = new ConsoleWriter();
-        consoleWriter.write(this.result.getResult());
+        consoleWriter.write(this.result.getOutput());
     }
 }

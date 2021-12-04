@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Word {
 
-    private String delimitedString;
-    private List<WordTransformer> wordTransformers;
-    private String word;
+    private final String delimitedString;
+    private final List<WordTransformer> wordTransformers;
+    private String wordString;
 
     public Word(String delimitedString, List<WordTransformer> wordTransformers) {
         this.delimitedString = delimitedString;
@@ -20,14 +20,10 @@ public class Word {
         for(WordTransformer wordTransformer : this.wordTransformers){
             transformedWord = wordTransformer.validate(transformedWord);
         }
-        this.word = transformedWord;
+        this.wordString = transformedWord;
     }
 
-    public String getWord(){
-        return this.word;
-    }
-
-    public int getWordLength() {
-        return this.word.length();
+    public int getWordStringLength() {
+        return this.wordString.length();
     }
 }

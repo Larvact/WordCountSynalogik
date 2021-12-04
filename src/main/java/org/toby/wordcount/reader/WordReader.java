@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class WordReader {
 
-    private Path path;
+    private final Path path;
 
     public WordReader(Path path) {
         this.path = path;
@@ -25,7 +25,7 @@ public class WordReader {
         try(BufferedReader reader = Files.newBufferedReader(this.path)){
             String line = reader.readLine();
             while(line != null){
-                String[] delimitedStringList = line.split(Regex.WHITE_SPACE_DELIMITER.getRegex());
+                String[] delimitedStringList = line.split(Regex.WHITE_SPACE_DELIMITER.getRegexString());
                 for (String delimitedString : delimitedStringList) {
                     Word currentWord = new Word(delimitedString, WordTransformersFactory.getWordTransformers());
                     wordsInFile.add(currentWord);
@@ -40,6 +40,6 @@ public class WordReader {
     }
 
     private List<Word> filterOutNonWords(List<Word> words){
-        return words.stream().filter(word -> word.getWordLength() > 0).collect(Collectors.toList());
+        return words.stream().filter(word -> word.getWordStringLength() > 0).collect(Collectors.toList());
     }
 }

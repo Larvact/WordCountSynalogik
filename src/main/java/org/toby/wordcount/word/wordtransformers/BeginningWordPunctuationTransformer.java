@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class BeginningWordPunctuationTransformer implements WordTransformer {
 
-    private static Pattern beginningOfWordPattern = Pattern.compile(Regex.PUNCTUATION_START_OF_WORD.getRegex());
+    private final static Pattern beginningOfWordPattern = Pattern.compile(Regex.PUNCTUATION_START_OF_WORD.getRegexString());
 
     @Override
     public String validate(String string) {

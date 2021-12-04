@@ -10,26 +10,26 @@ public class Result {
 
     private final String fileName;
     private final WordsCalculator wordsCalculator;
-    private String result;
+    private String output;
 
     public Result(Path path, WordsCalculator wordsCalculator) {
         this.fileName = path.getFileName().toString();
         this.wordsCalculator = wordsCalculator;
-        setResult();
+        setOutput();
     }
 
-    private void setResult(){
-        StringBuilder resultBuilder = new StringBuilder();
-        addFileNameToResultBuild(resultBuilder);
-        addWordCountToResultBuild(resultBuilder);
-        addAverageToResultBuild(resultBuilder);
-        addWordLengthFrequencyToResultBuild(resultBuilder);
-        addMostFrequentOccurringLengthToResultBuild(resultBuilder);
-        addFooterToResultBuild(resultBuilder);
-        this.result = resultBuilder.toString();
+    private void setOutput(){
+        StringBuilder outputBuilder = new StringBuilder();
+        addFileNameToOutputBuild(outputBuilder);
+        addWordCountToOutputBuild(outputBuilder);
+        addAverageToOutputBuild(outputBuilder);
+        addWordLengthFrequencyToOutputBuild(outputBuilder);
+        addMostFrequentOccurringLengthToOutputBuild(outputBuilder);
+        addFooterToOutputBuild(outputBuilder);
+        this.output = outputBuilder.toString();
     }
 
-    private void addFileNameToResultBuild(StringBuilder builder){
+    private void addFileNameToOutputBuild(StringBuilder builder){
         builder.append("\n")
                 .append("---------------------------------")
                 .append(this.fileName)
@@ -38,19 +38,19 @@ public class Result {
                 .append("\n");
     }
 
-    private void addWordCountToResultBuild(StringBuilder builder){
+    private void addWordCountToOutputBuild(StringBuilder builder){
         builder.append("Word Count = ")
                 .append(this.wordsCalculator.getWordCount())
                 .append("\n");
     }
 
-    private void addAverageToResultBuild(StringBuilder builder){
+    private void addAverageToOutputBuild(StringBuilder builder){
         builder.append("Average Word Length = ")
                 .append(this.wordsCalculator.getWordSizeAverage())
                 .append("\n");
     }
 
-    private void addWordLengthFrequencyToResultBuild(StringBuilder builder){
+    private void addWordLengthFrequencyToOutputBuild(StringBuilder builder){
         for(Map.Entry<Integer, Integer> wordLengthFrequencyPair : this.wordsCalculator.getWordSizeFrequencyMap().entrySet()){
             builder.append("The number of words of length ")
                     .append(wordLengthFrequencyPair.getKey())
@@ -60,7 +60,7 @@ public class Result {
         }
     }
 
-    private void addMostFrequentOccurringLengthToResultBuild(StringBuilder builder){
+    private void addMostFrequentOccurringLengthToOutputBuild(StringBuilder builder){
         List<Integer> mostFrequentWordLengths = this.wordsCalculator.getMostFrequentWordLengths();
         builder.append("The most frequently occurring word length is ")
                 .append(this.wordsCalculator.getMaximumWordFrequency());
@@ -79,13 +79,13 @@ public class Result {
         }
     }
 
-    private void addFooterToResultBuild(StringBuilder builder){
+    private void addFooterToOutputBuild(StringBuilder builder){
         builder.append("\n")
                 .append("\n")
                 .append("---------------------------------------------------------------------------------------------------");
     }
 
-    public String getResult() {
-        return result;
+    public String getOutput() {
+        return output;
     }
 }

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class WordValidationTransformer implements WordTransformer {
 
-    private static Pattern pattern = Pattern.compile(Regex.WORD_VALIDATION.getRegex());
+    private static final Pattern pattern = Pattern.compile(Regex.WORD_VALIDATION.getRegexString());
 
     @Override
     public String validate(String string) {

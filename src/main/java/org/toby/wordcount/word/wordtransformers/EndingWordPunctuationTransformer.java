@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public class EndingWordPunctuationTransformer implements WordTransformer{
 
-    private static Pattern endOfWordPattern = Pattern.compile(Regex.PUNCTUATION_END_OF_WORD.getRegex());
+    private static final Pattern endOfWordPattern = Pattern.compile(Regex.PUNCTUATION_END_OF_WORD.getRegexString());
 
     @Override
     public String validate(String string) {
