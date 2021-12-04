@@ -6,6 +6,6 @@ public class ApplicationEntry
 {
     public static void main( String[] args )
     {
-        new WordCount("src/test/resources/bibleDaily.txt");
+        new WordCount("src/test/resources/singleSentenceWordCountTestFile.txt");
     }
 }
