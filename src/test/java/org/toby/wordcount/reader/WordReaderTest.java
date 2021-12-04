@@ -10,7 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class WordReaderTester {
+public class WordReaderTest {
 
     private static Path singleSentenceWordCountTestFilePath;
     private static Path bibleDailyWordCountTestFilePath;

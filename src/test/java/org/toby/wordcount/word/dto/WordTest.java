@@ -8,7 +8,7 @@ import org.toby.wordcount.word.wordtransformers.WordTransformersFactory;
 
 import java.util.List;
 
-public class WordTester {
+public class WordTest {
 
     private static List<WordTransformer> wordTransformers;
 
