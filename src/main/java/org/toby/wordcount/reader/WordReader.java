@@ -41,8 +41,8 @@ public class WordReader {
                 line = reader.readLine();
             }
         } catch (IOException e) {
-            LOG.error(MessageFormat.format("The File on Path {0} Does Not Exist on Your System. Please Check and Re-input a Valid File Path to the Program and Try Again.", this.path));
-            throw new IllegalArgumentException(MessageFormat.format("The File on Path {0} Does Not Exist on Your System. Please Check and Re-input a Valid File Path to the Program and Try Again.", this.path));
+            LOG.error(MessageFormat.format("Either the File on Path {0} Does Not Exist on Your System or Something has Gone Wrong in Attempting to Connect to it. Please Check and Re-input a Valid File Path to the Program and Try Again.", this.path));
+            throw new IllegalArgumentException(MessageFormat.format("The File on Path {0} Does Not Exist on Your System or Something has Gone Wrong in Attempting to Connect to it. Please Check and Re-input a Valid File Path to the Program and Try Again.", this.path));
         }
         wordsInFile = filterOutNonWords(wordsInFile);
         checkReadWordsIsNonEmpty(wordsInFile);

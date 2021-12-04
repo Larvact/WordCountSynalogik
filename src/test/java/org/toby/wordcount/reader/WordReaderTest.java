@@ -17,7 +17,7 @@ public class WordReaderTest {
 
     @BeforeAll
     private static void setupFilePaths(){
-        singleSentenceWordCountTestFilePath = Paths.get(TestFileLocations.SINGLE_SENTENCE_FILE_PATH.getFilePath());
+        singleSentenceWordCountTestFilePath = Paths.get(TestFileLocations.SINGLE_SENTENCE_FILE.getFilePath());
         bibleDailyWordCountTestFilePath = Paths.get(TestFileLocations.BIBLE_DAILY.getFilePath());
     }
 
