@@ -1,6 +1,7 @@
 <h1>Word Count</h1>
 
 <h2>Requirements</h2>
+
 - Java JDK 8 or Above Installed and Environmental Variables Set
 - Maven Installed and Environmental Variables Set
 
