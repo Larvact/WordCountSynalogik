@@ -36,8 +36,8 @@ When building the program, ensure that these dependencies have been downloaded i
 
 <h2> How To Build and Run</h2>
 <h3>Command Line From JAR File</h3>
-1. Go to https://github.com/Larvact/WordCountSynalogik and either clone the repository or download the zip and extract onto your machine
 
+1. Go to https://github.com/Larvact/WordCountSynalogik and either clone the repository or download the zip and extract onto your machine
 2. Go to the root directory of the project on the cmd. Should be {Path to Your Java Projects}/WordCountSynalogik
 3. Run the command "mvn dependency:resolve"
 4. Run the command "mvn clean package"
@@ -46,6 +46,7 @@ When building the program, ensure that these dependencies have been downloaded i
 7. Results of the count will be printed to the cmd
 
 <h3>Intellij IDE</h3>
+
 1. Go to https://github.com/Larvact/WordCountSynalogik and either clone the repository or download the zip and extract onto your machine
 2. Open Intellij and go to File -> New Project From Existing Sources and select the root directory of the project on the cmd. Should be {Path to Your Java Projects}/WordCountSynalogik
 3. Go to the POM file and click on the refresh maven button to download the dependencies of the project   
@@ -56,6 +57,7 @@ When building the program, ensure that these dependencies have been downloaded i
 
 <h2>How the Program Works</h2>
 <h3>High Level Overview</h3>
+
 1. Each string in the inputted file is delimited by any number of spaces
 2. Each read string has transformations that are conducted it to remove punctuation and undesired symbols from the beginning and end of the string in order to create a potential word
 3. A final check on the word is made at the end of the transformation to see if it contains any alphanumeric characters. If it does not then it is filtered away as not a word.
@@ -81,6 +83,7 @@ Current implemented common examples as follows:
 12. & - Transforms to the word & with length 1
 
 <h3>Non Word Examples</h3>
+
 1. \*******************
 2. \#$%%^$^"£$"£%
 3. Anything that does not contain an alphanumeric
@@ -88,10 +91,12 @@ Current implemented common examples as follows:
 For the specific regex used to create these rules look at the ENUM located at src/main/java/org/toby/wordcount/utils/Regex.java
 
 <h2>Limitations</h2>
+
 1. The program is inaccurate for non-English languages
 2. Can only handle one file at a time
    
 <h2>Improvements</h2>
+
 1. Test coverage not yet at 100%, more unit testing required to achieve this. Mostly with negative testing
 2. Have a BA to review the base assumptions of a word and add/amend/remove transformations as applicable
 3. Instead of writing the result to the console, generate a results text file
