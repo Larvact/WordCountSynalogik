@@ -37,6 +37,7 @@ When building the program, ensure that these dependencies have been downloaded i
 <h2> How To Build and Run</h2>
 <h3>Command Line From JAR File</h3>
 1. Go to https://github.com/Larvact/WordCountSynalogik and either clone the repository or download the zip and extract onto your machine
+
 2. Go to the root directory of the project on the cmd. Should be {Path to Your Java Projects}/WordCountSynalogik
 3. Run the command "mvn dependency:resolve"
 4. Run the command "mvn clean package"
