@@ -21,7 +21,7 @@ public class WordSizeAverager {
         for(Word word : this.words){
             sumOfLettersOrNumbers = sumOfLettersOrNumbers + word.getWordStringLength();
         }
-        BigDecimal averageWordSize = BigDecimal.valueOf(sumOfLettersOrNumbers/ (double) wordCounter.getWordCount()).setScale(3, RoundingMode.HALF_UP);
+        BigDecimal averageWordSize = BigDecimal.valueOf(sumOfLettersOrNumbers/ BigDecimal.valueOf(wordCounter.getWordCount()).doubleValue()).setScale(3, RoundingMode.HALF_UP);
         return averageWordSize.doubleValue();
     }
 }
